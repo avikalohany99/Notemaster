@@ -19,7 +19,7 @@
             template: `
             <div>
                 <div>Count: {{this.count}}</div>
-                <button class ="vue-btn" @click="increment">Increment by 1</button>
+                <button class ="vue-btn" @click="increment">Increment by 2</button>
             </div>
             `,
             data() {
@@ -29,7 +29,7 @@
             },
             methods: {
                 increment() {
-                    this.count++
+                    this.count = this.count + 2
                 }
             }
         })
