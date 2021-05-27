@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notemaster</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="http://davidtkatz.com/public_css/noteMaster.css">-->
+    <link rel="stylesheet" href="/Notemaster/css/style.css">
+</head>
+<body>
+    <div id="app">
+        <h3 class="txt-centre">{{title}}</h3>
+        <div class = "form">
+            <div class="form-group m-t-10">
+                <label class="bold">Note Title</label>
+                <input class="form-control" type ="text" v-model="note.title">
+            </div>
+            <div class="form-group m-t-10">
+                <label class="bold txt-right">Note Text</label>
+                <textarea class="form-control" v-model="note.text"></textarea>
+            </div>
+            <button class ="btn btn-primary m-t-10" @click = "addNote">Submit</button>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-4 note" v-for="(note, index) in notes">
+                <div class= "noteCard m-t-10 m-l-10">
+                    <button class="close" @click="removeNote(index)">&times;</button>
+                    <div class="card-block">
+                        <h4 class="card-title">{{note.title}}</h4>  
+                        <h6 class="card-subtitle mb-2 text-muted">{{note.date}}</h6>
+                        <p class="card-text">{{note.text}}</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                title: 'Notemaster',
+                note: {
+                    title: '',
+                    text: '',
+                    num: '',
+                },
+                notes: [
+                    {
+                        title:'Visited Hawaii',
+                        text: 'Loved the beaches',
+                        date:  new Date(Date.now()).toLocaleString(),
+                        num: '1'
+                    }
+                ]
+            },
+            methods:{
+                addNote() {
+                    let{ title, text, num } = this.note
+                    this.notes.push({
+                        title,
+                        text,
+                        date: new Date(Date.now()).toLocaleString(),
+                        num,
+                    })
+                },
+                removeNote(index) {
+                    this.notes.splice(index, 1)
+                }
+            }
+        })
+    </script>
+</body>    
+</html>

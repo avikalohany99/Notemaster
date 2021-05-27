@@ -1,0 +1,58 @@
+.noteCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: rgb(156, 248, 51);
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.75rem;
+}
+
+.form {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 30px;
+  margin-right: 450px;
+}
+
+.close {
+  position: absolute;
+  background-color: rgb(156, 248, 51);
+  top: 0;
+  right: 0;
+  z-index: 2;
+  border: 0ch;
+}
+
+.m-t-10 {
+  margin-top: 10px;
+}
+
+.m-t-15 {
+  margin-top: 15px;
+}
+
+.m-l-10 {
+  margin-left: 10px;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.txt-centre {
+  text-align: center;
+}
+
+.txt-left {
+  text-align: left;
+}
+
+.txt-right {
+  text-align: right;
+}
+
+.txt-justify {
+  text-align: justify;
+}
