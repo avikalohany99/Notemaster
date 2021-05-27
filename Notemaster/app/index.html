@@ -11,64 +11,55 @@
     <div id="app">
         <h3 class="txt-centre fs-30">{{title}}</h3>
         <div class = "form">
-            <div class="flex form-group m-t-10">
+            <div class="form-group m-t-10">
                 <label class="bold">Note Title</label>
                 <input class="form-control" type ="text" v-model="note.title">
             </div>
-            <div class="flex form-group m-t-10">
+            <div class="form-group m-t-10">
                 <label class="bold txt-right">Note Text</label>
                 <textarea class="form-control" v-model="note.text"></textarea>
+            </div>
+            <div class="form-group m-t-10">
+                <label class="bold txt-right">Priority</label>
+                <input class="form-control" v-model="note.num"></input>
             </div>
             <button class ="btn btn-primary m-t-10" @click = "addNote">Submit</button>
         </div>
         <div class="col-sm-12">
             <div class="col-sm-4 note" v-for="(note, index) in notes">
-                <div class= "noteCard m-t-10 m-l-10" style="margin-right:200px">
-                    <button class="close" @click="removeNote(index)">&times;</button>
+
+                <!-- Regular Note -->
+                <div class= "noteCard m-t-10 m-l-10 bg-color-1" style="margin-right:200px">
+                    <button class="close bg-color-1" @click="removeNote(index)">&times;</button>
                     <div class="card-block m-l-10">
                         <h4 class="card-title fs-20">{{note.title}}</h4>  
                         <h6 class="card-subtitle mb-2 text-muted fs-10">{{note.date}}</h6>
                         <p class="card-text fs-15">{{note.text}}</p>
-                        
+                    </div>
+                </div>
+                
+                <!--Important Note-->
+                <div class= "noteCard m-t-10 m-l-10 bg-color-2" style="margin-right:200px">
+                    <button class="close bg-color-2" @click="removeNote(index)">&times;</button>
+                    <div class="card-block m-l-10">
+                        <h4 class="card-title fs-20">{{note.title}}</h4>  
+                        <h6 class="card-subtitle mb-2 text-muted fs-10">{{note.date}}</h6>
+                        <p class="card-text fs-15">{{note.text}}</p>
+                    </div>
+                </div>
+
+                <!--Very Important Note-->
+                <div class= "noteCard m-t-10 m-l-10 bg-color-3" style="margin-right:200px">
+                    <button class="close bg-color-3" @click="removeNote(index)">&times;</button>
+                    <div class="card-block m-l-10">
+                        <h4 class="card-title fs-20">{{note.title}}</h4>  
+                        <h6 class="card-subtitle mb-2 text-muted fs-10">{{note.date}}</h6>
+                        <p class="card-text fs-15">{{note.text}}</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        var app = new Vue({
-            el: "#app",
-            data: {
-                title: 'Notemaster',
-                note: {
-                    title: '',
-                    text: '',
-                    num: '',
-                },
-                notes: [
-                    {
-                        title:'Visited Hawaii',
-                        text: 'Loved the beaches',
-                        date:  new Date(Date.now()).toLocaleString(),
-                        num: '1'
-                    }
-                ]
-            },
-            methods:{
-                addNote() {
-                    let{ title, text, num } = this.note
-                    this.notes.push({
-                        title,
-                        text,
-                        date: new Date(Date.now()).toLocaleString(),
-                        num,
-                    })
-                },
-                removeNote(index) {
-                    this.notes.splice(index, 1)
-                }
-            }
-        })
-    </script>
+    <script src="script.js" type="txt/javascript">var app</script>
 </body>    
 </html>
