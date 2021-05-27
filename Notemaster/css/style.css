@@ -4,11 +4,22 @@
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: rgb(156, 248, 51);
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.75rem;
   padding: 0px -50px 0px 0px;
+}
+
+.bg-color-1 {
+  background-color: lightgreen;
+}
+
+.bg-color-2 {
+  background-color: mediumseagreen;
+}
+
+.bg-color-3 {
+  background-color: darkgreen;
 }
 
 .form {
@@ -25,7 +36,6 @@
 
 .close {
   position: absolute;
-  background-color: rgb(156, 248, 51);
   top: 0;
   right: 0;
   margin-top: 2px;
