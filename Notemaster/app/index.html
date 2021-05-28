@@ -7,8 +7,8 @@
     rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="/Notemaster/css/style.css">
 </head>
-<body>
-    <div id="app">
+<body class="background">
+    <div id="app" style="background-image:'/Notemaster/doodle.svg'">
         <h3 class="txt-centre fs-30">{{title}}</h3>
         <div class = "form">
             <div class="form-group m-t-10">
@@ -26,10 +26,10 @@
             <button class ="btn btn-primary m-t-10" @click = "addNote">Submit</button>
         </div>
         <div class="col-sm-12">
-            <div class="col-sm-4 note" v-for="(note, index) in notes">
+            <div class="col-sm-4" v-for="(note, index) in notes">
 
                 <!-- Regular Note -->
-                <div class= "noteCard m-t-10 m-l-10 bg-color-1" style="margin-right:200px">
+                <div class= "noteCard m-t-10 m-l-10 bg-color-1" style="margin-right:200px" v-if="note.num==1">
                     <button class="close bg-color-1" @click="removeNote(index)">&times;</button>
                     <div class="card-block m-l-10">
                         <h4 class="card-title fs-20">{{note.title}}</h4>  
@@ -39,7 +39,7 @@
                 </div>
                 
                 <!--Important Note-->
-                <div class= "noteCard m-t-10 m-l-10 bg-color-2" style="margin-right:200px">
+                <div class= "noteCard m-t-10 m-l-10 bg-color-2" style="margin-right:200px" v-if="note.num==2">
                     <button class="close bg-color-2" @click="removeNote(index)">&times;</button>
                     <div class="card-block m-l-10">
                         <h4 class="card-title fs-20">{{note.title}}</h4>  
@@ -49,7 +49,7 @@
                 </div>
 
                 <!--Very Important Note-->
-                <div class= "noteCard m-t-10 m-l-10 bg-color-3" style="margin-right:200px">
+                <div class= "noteCard m-t-10 m-l-10 bg-color-3" style="margin-right:200px" v-if="note.num==3">
                     <button class="close bg-color-3" @click="removeNote(index)">&times;</button>
                     <div class="card-block m-l-10">
                         <h4 class="card-title fs-20">{{note.title}}</h4>  
@@ -60,6 +60,6 @@
             </div>
         </div>
     </div>
-    <script src="script.js" type="txt/javascript">var app</script>
+    <script type="text/javascript" src="/Notemaster/js/script.js"></script>
 </body>    
 </html>
