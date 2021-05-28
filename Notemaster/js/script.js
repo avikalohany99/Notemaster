@@ -1,7 +1,7 @@
 var app = new Vue({
     el: "#app",
     data: {
-        title: 'Notemaster',
+        title: 'Notemaster', //Notes
         note: {
             title: '',
             text: '',
