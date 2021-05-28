@@ -1,7 +1,7 @@
 var app = new Vue({
     el: "#app",
     data: {
-        title: 'Notemaster', //Notes
+        title: 'Notemaster',
         note: {
             title: '',
             text: '',
@@ -9,7 +9,7 @@ var app = new Vue({
         },
         notes: [
             {
-                title:'Visited Hawaii',
+                title:'Visited Hawaii',//Example
                 text: 'Loved the beaches',
                 date:  new Date(Date.now()).toLocaleString(),
                 num: '1'
